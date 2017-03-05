@@ -29,6 +29,16 @@ void initBoard(){
 	sbi(DDRD,DIODA_PIN);
 	
 	sbi(PORTD, TLACITKO_PIN);
+	
+	//Z periferii.c, treba spravit definy nech sa to da aj citat
+	//Tiez treba zmazat tie ktore sa zapinaju dva krat
+	sbi(DDRD,PORTD7);				// Control Trans. GP2Y
+	sbi(PORTD,PORTD2);				// Pull-up S2
+	sbi(DDRD,PORTD5);				//RES_ESP
+	sbi(DDRC,PORTC2);				//TX SW_UART
+	sbi(PORTC,PORTC2);				// TX SW_UART  H
+	sbi(DDRD,PORTD6);				// CO2
+	sbi(DDRD,PORTD7);				// Control Trans CO2
 }
 
 //Controlling of the diod
